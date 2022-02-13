@@ -1,4 +1,5 @@
-baseURL: https://robyyasiramri.github.io
+#baseURL: https://robyyasiramri.github.io
+baseURL: https://cv.byamri.com
 
 languageCode: en-us
 title: "My Resume"
@@ -15,7 +16,7 @@ languages:
     weight: 2
   bn:
     languageName: বাংলা
-    weight: 3
+#    weight: 3
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 # DefaultContentLanguage: bn
