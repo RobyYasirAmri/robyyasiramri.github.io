@@ -1,5 +1,5 @@
 section:
-  name: About
+  name: Tentang
   id: about
   enable: true
   weight: 1
@@ -14,7 +14,7 @@ company:
   url: "https://btech.id"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "#files/resume.pdf"
+resume: "files/CV2022_RobyYasirAmri-final.pdf"
 
 # a summary about you
 summary: 'I am interested in technological developments related to Cloud Computing, Linux, DevOps, Scripting, and Programming.
