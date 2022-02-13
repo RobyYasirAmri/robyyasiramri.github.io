@@ -9,6 +9,7 @@ menu:
     weight: 10
 tags: ["Kubernetes", "Linux"]
 categories: ["Kubernetes", "Linux"]
+hero: kubernetes.png
 ---
 Pada kesempatan kali ini saya akan membagikan bagaimana cara konfigurasi High Availability Cluster Kubernetes di Ubuntu menggunakan HAProxy dan Keepalived. Kita menggunakan Keepalived dan HAproxy untuk load balancing dan high availabilty-nya. Hal yang perlu di persiapkan antara lain:
 1. Kebutuhan hosts
@@ -266,7 +267,7 @@ Feb 02 16:07:13 rb-k8s-lb2 Keepalived_vrrp[699]: (haproxy-vip) Entering BACKUP S
 Feb 02 16:07:13 rb-k8s-lb2 Keepalived_vrrp[699]: VRRP_Script(chk_haproxy) succeeded
 Feb 02 16:07:13 rb-k8s-lb2 Keepalived_vrrp[699]: (haproxy-vip) Changing effective priority from 100 to 102
 ```
-## Verivikasi High Availability
+## Verifikasi High Availability
 Sebelum kita membuat cluster kubernetes kita harus memastikan konfigurasi high availabilty kita berfungsi dengan semestinya
 
 1. Cek IP Address pada node rb-k8s-lb1:
