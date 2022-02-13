@@ -1,7 +1,7 @@
 ---
 title: "Cara Konfigurasi High Availabilty Kubernetes Cluster di Ubuntu 20.4"
 date: 2022-02-13T08:06:25+06:00
-description: Introduction to Sample Post
+description: Konfigurasi High Availabilty Kubernetes HAproxy
 menu:
   sidebar:
     name: Kubernetes

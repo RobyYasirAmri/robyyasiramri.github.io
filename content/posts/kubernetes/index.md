@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes sss"
+title: "How to Configure High Availabilty Kubernetes Cluster on Ubuntu 20.4"
 date: 2022-02-13T08:06:25+06:00
 description: Introduction to Sample Post
 menu:
