@@ -85,6 +85,7 @@ degrees:
   timeframe: 2015-2018
   institution:
     name: SMKN 4 Kendal
+    url: "http://smkn4kendal.sch.id"
 #  grade: #(optional)
 #    scale: GPA
 #    achieved: 4.5

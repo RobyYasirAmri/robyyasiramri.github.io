@@ -19,22 +19,23 @@ skills:
 
 - name: Kubernetes
   logo: /images/sections/skills/kubernetes.png
-  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+  summary: "Capable of deploying, managing application on Kubernetes."
   url: "https://kubernetes.io/"
 
 - name: Prometheus
   logo: /images/sections/skills/prometheus.png
-  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
+  summary: "Capable of setup, configure Prometheus metrics. Experienced with Promtail, AlertManager. Also, experienced with writing metric exporters."
   url: "https://prometheus.io/"
 
 - name: Grafana
   logo: /images/sections/skills/grafana.png
-  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
+  summary: "Capable of setup, configure Grafana. Experienced with custom dashboard, create alerting. Also, experienced with integrate alert using Telegram, etc."
   url: "https://grafana.com"
 
 - name: Linux
   logo: /images/sections/skills/linux.png
   summary: "Using as the main operating system. Capable of writing bash/shell scripts."
+  url: "https://www.linux.org"
 
 - name: Elastic Stack
   logo: /images/sections/skills/elk.png
@@ -43,7 +44,7 @@ skills:
 
 - name: Openstack
   logo: /images/sections/skills/openstack.png
-  summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
+  summary: "Worked with most of the major clouds such as Openstack, Nutanix, GCP, AWS, Azure etc."
   url: "https://www.openstack.org"
 
 
@@ -57,6 +58,6 @@ skills:
   summary: "Experienced with git-based development. Mostly, use Github. Also, have experience in working with GitLab."
   url: "https://git-scm.com/"
 
-- name: C++
-  logo: /images/sections/skills/c++.png
-  summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+#- name: C++
+#  logo: /images/sections/skills/c++.png
+#  summary: "Know basic C/C++ programming. Used for contest programming and problem solving."

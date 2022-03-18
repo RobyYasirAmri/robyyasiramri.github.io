@@ -1,5 +1,5 @@
 #baseURL: https://robyyasiramri.github.io
-baseURL: https://cv.byamri.com
+baseURL: https://me.byamri.com
 
 languageCode: en-us
 title: "My Resume"
@@ -40,7 +40,13 @@ outputs:
     - JSON
 
 # Enable Google Analytics
-googleAnalytics: UA-122321624-2
+params:
+  features:
+    analytics:
+      enabled: true
+      google:
+        id: UA-122321624-2
+#googleAnalytics: UA-122321624-2
 
 # Enable global emoji support
 enableEmoji: true
