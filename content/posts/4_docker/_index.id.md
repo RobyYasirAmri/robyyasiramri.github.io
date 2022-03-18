@@ -1,8 +1,8 @@
 ---
-title: Openstack
+title: Docker
 menu:
   sidebar:
-    name: Openstack
-    identifier: openstack-category
+    name: Docker
+    identifier: docker-category
     weight: 4
 ---

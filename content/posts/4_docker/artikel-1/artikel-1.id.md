@@ -5,7 +5,7 @@ hero: /images/posts/writing-posts/git.svg
 menu:
   sidebar:
     name: Docker Introduction
-    identifier: docker-post-test-en
+    identifier: docker-post-test-id
     parent: docker-category
     weight: 1
 ---
