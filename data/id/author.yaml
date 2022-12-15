@@ -8,7 +8,6 @@ image: "images/author/me2.png"
 # give your some contact information. they will be used in the footer
 contactInfo:
   email: "roby@byamri.com"
-  phone: "+6285155274275"
 
 # some summary about what you do
 summary:

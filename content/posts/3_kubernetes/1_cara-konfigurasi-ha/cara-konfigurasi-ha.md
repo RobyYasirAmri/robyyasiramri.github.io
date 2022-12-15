@@ -1,34 +1,34 @@
 ---
-title: "Cara Konfigurasi High Availabilty Kubernetes Cluster di Ubuntu 20.4"
+title: "How to Configure High Availabilty Kubernetes Cluster on Ubuntu 20.4"
 date: 2022-02-13T08:06:25+06:00
-description: Konfigurasi High Availabilty Kubernetes HAproxy
+description: Configure High Availability Kubernetes HAproxy
 menu:
   sidebar:
     name: Install Kubernetes HA
-    identifier: kubernetes-post-id
+    identifier: kubernetes-post-en
     parent: kubernetes-category
     weight: 1
 tags: ["Kubernetes", "Linux"]
 categories: ["Kubernetes", "Linux"]
-hero: kubernetes1.png
+hero: /posts/3_kubernetes/1_cara-konfigurasi-ha/kubernetes1.png
 ---
-Pada kesempatan kali ini saya akan membagikan bagaimana cara konfigurasi High Availability Cluster Kubernetes di Ubuntu menggunakan HAProxy dan Keepalived. Kita menggunakan Keepalived dan HAproxy untuk load balancing dan high availabilty-nya. Hal yang perlu di persiapkan antara lain:
-1. Kebutuhan hosts
-2. konfigurasi HAproxy dan Keepalived
-3. Konfigurasi clustering Kubernetes menggunakan Kubeadm.
+On this occasion I will share how to configure High Availability Cluster Kubernetes on Ubuntu using HAProxy and Keepalive. We use Keepalive and HAproxy for load balancing and high availability. Things that need to be prepared include:
+1. Hosts/Instances/VM
+2. Configure HAproxy and Keepalive
+3. Configure Kubernetes clustering using Kubeadm.
 
 ## Architecture Clusters.
 
-Disini kita menggunakan 3 master, 3 worker, 2 loadbalancer, dan 1 IP untuk digunakan sebagai Virtual IP Address. VIP artinya jika terjadi error atau 1 node mati IP dapat di teruskan ke node yang memungkinkan terjadinya flaiover, sehingga tercapai High Availability sesuai dengan tujuan lab kita saat ini.
+Here we use 3 masters, 3 workers, 2 load balancers, and 1 IP to be used as a Virtual IP Address. VIP means that if an error occurs or 1 node dies, the IP can be forwarded to the node that allows flaiover to occur, so that High Availability is achieved according to our current lab goals.
 
-{{< img src="/posts/kubernetes/topologi-ha-kubernetes.png" height="700" width="600" align="center" title="Topologi" >}}
+{{< img src="/posts/3_kubernetes/1_cara-konfigurasi-ha/topologi-ha-kubernetes.png" height="700" width="600" align="center" title="Topologi" >}}
 
 {{< vs 3 >}}
 
 
-Perlu digaris bawahi, bahwa HAproxy dan Keepalived tidak di install di node master. HAproxy dan Keepalived hanya di install di node loadbalancer1 dan loadbalancer2
+It should be underlined, that HAproxy and Keepalive are not installed on the master node. HAproxy and Keepalive are only installed on loadbalancer1 and loadbalancer2 nodes
 
-Host yang digunakan:
+Hosts used:
 
    | Hostname     | IP Address  | Roles                |
    | ------------ | ----------- | -------------------- |
@@ -42,16 +42,16 @@ Host yang digunakan:
    | rb-k8s-worker3   | 10.60.60.56 | worker |
    |         -        | 10.60.60.45 | VirtualIP |
 
-## Konfigurasi Load Balancing:
-Keepalived dan HAproxy di install pada node rb-k8s-lb1 dan rb-k8s-lb2. Dengan sekenario jika salah satu node loadbalancer ada yang down/mati maka Virtual IP akan otomatis menggunakan jalur di node loadbalancer yang sedang running sehingga cluster kubernetes tidak mengalami kegagalan/error.
+## Load Balancing Configuration:
+Keepalived and HAproxy are installed on nodes rb-k8s-lb1 and rb-k8s-lb2. In this scenario, if one of the loadbalancer nodes is down/dead, Virtual IP will automatically use the path on the loadbalancer node that is running so that the Kubernetes cluster does not experience an error.
 
-### Install Keepalived dan HAproxy pada kedua node
+### Install Keepalive and HAproxy on both nodes
 
-1. Jalankan pada node rb-k8s-lb1 dan rb-k8s-lb2:
+1. Run on nodes rb-k8s-lb1 and rb-k8s-lb2:
 ```
 sudo apt install keepalived haproxy psmisc -y
 ```
-2. Lakukan konfigurasi pada haproxy di kedua node loadbalancer:
+2. Configure haproxy on both loadbalancer nodes:
 ```
 sudo vi /etc/haproxy/haproxy.cfg
 ```
@@ -91,18 +91,16 @@ backend kube-apiserver
     server rb-k8s-master2 10.60.60.52:6443 check # Replace the IP address with your own.
     server rb-k8s-master3 10.60.60.53:6443 check # Replace the IP address with your own.
 ```
-3. Restart service load HAproxy:
+3. Restart service HAproxy:
 ```
 sudo systemctl restart haproxy
 ```
-4. Kemudian restart dan enable service HAproxy:
-```
-sudo systemctl restart haproxy
-```
+4. Then restart and enable the HAproxy service:
 ```
 sudo systemctl enable haproxy
+sudo systemctl restart haproxy
 ```
-5. Pastikan service HAproxy active:
+5. Make sure the HAproxy service is active:
 ```
 root@rb-k8s-lb1:~# systemctl status haproxy.service 
 ● haproxy.service - HAProxy Load Balancer
@@ -125,12 +123,12 @@ Feb 12 17:29:05 rb-k8s-lb1 systemd[1]: Started HAProxy Load Balancer.
 Feb 12 17:29:08 rb-k8s-lb1 haproxy[464002]: [WARNING] 042/172908 (464002) : Server kube-apiserver/rb-k8s-master2 is DOWN, reason: Layer4 conn>
 Feb 12 17:29:12 rb-k8s-lb1 haproxy[464002]: [WARNING] 042/172912 (464002) : Server kube-apiserver/rb-k8s-master3 is DOWN, reason: Layer4 conn>
 ```
-### Konfigurasi Keepalived
-1. Lakukan konfigurasi keepalived pada kedua node rb-k8s-lb1 dan rb-k8s-lb2:
+### Keepalive Configuration
+1. Configure keepalive on both nodes rb-k8s-lb1 and rb-k8s-lb2:
 ```
 sudo /etc/keepalived/keepalived.conf
 ```
-Konfigurasi keepalived.conf pada rb-k8s-lb1:
+Configure keepalive.conf on rb-k8s-lb1:
 ```
 global_defs {
   notification_email {
@@ -171,7 +169,7 @@ vrrp_instance haproxy-vip {
   }
 }
 ```
-Konfigurasi keepalived.conf pada rb-k8s-lb2:
+Configure keepalive.conf on rb-k8s-lb2:
 ```
 global_defs {
   notification_email {
@@ -212,15 +210,13 @@ vrrp_instance haproxy-vip {
   }
 }
 ```
-3. Kemudian restart dan enable service keepalived
-```
-sudo systemctl restart keepalived
-```
+3. Then restart and enable the keepalive service
 ```
 sudo systemctl enable keepalived
+sudo systemctl restart keepalived
 ```
-4. Pastikan service keepalived running
-Status keepalived pada rb-k8s-lb1:
+4. Make sure the service keepalived is running
+Status keepalived on rb-k8s-lb1:
 ```
 root@rb-k8s-lb1:~# sudo systemctl status keepalived.service 
 ● keepalived.service - Keepalive Daemon (LVS and VRRP)
@@ -244,7 +240,7 @@ Feb 02 16:07:10 rb-k8s-lb1 Keepalived_vrrp[708]: VRRP_Script(chk_haproxy) succee
 Feb 02 16:07:10 rb-k8s-lb1 Keepalived_vrrp[708]: (haproxy-vip) Changing effective priority from 100 to 102
 Feb 02 16:07:14 rb-k8s-lb1 Keepalived_vrrp[708]: (haproxy-vip) Entering MASTER STATE
 ```
-Status keepalived pada rb-k8s-lb2:
+Status keepalived on rb-k8s-lb2:
 ```
 root@rb-k8s-lb2:~# sudo systemctl status keepalived.service 
 ● keepalived.service - Keepalive Daemon (LVS and VRRP)
@@ -268,10 +264,10 @@ Feb 02 16:07:13 rb-k8s-lb2 Keepalived_vrrp[699]: (haproxy-vip) Entering BACKUP S
 Feb 02 16:07:13 rb-k8s-lb2 Keepalived_vrrp[699]: VRRP_Script(chk_haproxy) succeeded
 Feb 02 16:07:13 rb-k8s-lb2 Keepalived_vrrp[699]: (haproxy-vip) Changing effective priority from 100 to 102
 ```
-## Verifikasi High Availability
-Sebelum kita membuat cluster kubernetes kita harus memastikan konfigurasi high availabilty kita berfungsi dengan semestinya
+## High Availability Verification
+Before we create a kubernetes cluster we have to make sure our high availability configuration is working properly.
 
-1. Cek IP Address pada node rb-k8s-lb1:
+1. Check the IP Address on the node rb-k8s-lb1:
 ```
 root@rb-k8s-lb1:~# ip a
 1: lo:  mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -289,13 +285,13 @@ root@rb-k8s-lb1:~# ip a
     inet6 fe80::5054:ff:fe72:9a4b/64 scope link 
        valid_lft forever preferred_lft forever
 ```
-Bisa kita lihat bahwa VIP 10.60.60.45 berhasil ditambahkan pada node rb-k8s-lb1. kemudian kita simulasikan jika node rb-k8s-lb1 down, maka seharusnya VIP 10.60.60.45 akan otomatis berpindah ke node rb-k8s-lb2
+We can see that VIP 10.60.60.45 was successfully added to the node rb-k8s-lb1. then we simulate if node rb-k8s-lb1 is down, then VIP 10.60.60.45 should automatically move to node rb-k8s-lb2
 
-2. Kita matikan service HAproxy pada node rb-k8s-lb1:
+2. We turn off the HAproxy service on the rb-k8s-lb1 node:
 ```
 sudo systemctl stop haproxy.service
 ```
-3. Lalu kita cek lagi IP Address pada node rb-k8s-lb1:
+3. Then we check again the IP Address on the node rb-k8s-lb1:
 ```
 root@rb-k8s-lb1:~# ip a
 1: lo:  mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -311,9 +307,9 @@ root@rb-k8s-lb1:~# ip a
     inet6 fe80::5054:ff:fe72:9a4b/64 scope link 
        valid_lft forever preferred_lft forever
 ```
-Pada node rb-k8s-lb1 VIP 10.60.60.45 sudah tidak ada, maka kita harus pastikan jika VIP berada pada node rb-k8s-lb2
+At node rb-k8s-lb1 VIP 10.60.60.45 no longer exists, then we have to make sure if VIP is at node rb-k8s-lb2
 
-4. Cek IP Address pada node rb-k8s-lb2:
+4. Check the IP Address on the rb-k8s-lb2 node:
 ```
 
 root@rb-k8s-lb2:~# ip a
@@ -332,11 +328,11 @@ root@rb-k8s-lb2:~# ip a
     inet6 fe80::5054:ff:feaa:3d02/64 scope link 
        valid_lft forever preferred_lft forever
 ```
-Sesuai harapan kita bahwa VIP sudah berpindah ke node rb-k8s-lb2 jika disimulasikan node rb-k8s-lb1 mati dengan menonaktifkan service haproxy pada rb-k8s-lb1.
+As per our expectation that VIP has moved to node rb-k8s-lb2 if simulated node rb-k8s-lb1 is dead by disabling haproxy service on rb-k8s-lb1.
 
-5. Jangan lupa kita start lagi service haproxy pada node rb-k82-lb1:
+5. Don't forget to start the haproxy service again on node rb-k82-lb1:
 ```
 sudo systemctl start haproxy.service
 ```
 
-Pada postingan berikutnya kita akan melanjutkan dengan mengkonfigurasi cluster kubernetes menggunakan alamat VIP yang sudah kita buat tadi
+In the next post we will continue with configuring the Kubernetes cluster using the VIP address we created earlier

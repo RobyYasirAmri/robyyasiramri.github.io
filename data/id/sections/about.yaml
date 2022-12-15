@@ -14,12 +14,12 @@ company:
   url: "https://btech.id"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "files/CV2022_RobyYasirAmri-final.pdf"
+resume: "files/CV2022_RobyYasirAmri_v2.4.pdf"
 
 # a summary about you
-summary: 'I am interested in technological developments related to Cloud Computing, Linux, DevOps, Scripting, and Programming.
-I also like to share knowledge through the community and
-personal blog.'
+summary: 'Saya tertarik dengan perkembangan teknologi yang berkaitan dengan Cloud Computing, Linux, DevOps, Scripting, dan Programming.
+Saya juga suka berbagi ilmu melalui komunitas dan
+blog pribadi.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -42,7 +42,7 @@ socialLinks:
 
 - name: Facebook
   icon: "fab fa-facebook"
-  url: "#"
+  url: "https://web.facebook.com/roby.screen/"
 
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
@@ -69,14 +69,20 @@ badges:
   badge: "https://images.credly.com/size/340x340/images/115e08d1-6b0c-40b2-aa15-5906022f4db0/L_01_asso_JNCIA-Junos.png"
 
 - type: certification
+  name: Certified Kubernetes Administrator
+  url: "https://www.credly.com/badges/b57d94b0-71e5-42a8-af3b-40d8f5c29193/public_url"
+  badge: "https://images.credly.com/size/340x340/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png"
+
+- type: certification
   name: Certified Openstack Administrator
   url: "https://drive.google.com/file/d/1cAYNCy_WuoP9MEWCuPYpFymv9CIuMju2/view?usp=sharing"
   badge: "https://www.pngkit.com/png/detail/608-6085113_certified-openstack-administrator.png"
 
-softSkills:
-- name: Leadership
-  percentage: 85
-  color: blue
+
+#softSkills:
+#- name: Leadership
+#  percentage: 85
+#  color: blue
 #- name: Team Work
 #  percentage: 90
 #  color: yellow

@@ -15,7 +15,7 @@ experiences:
     url: "https://btech.id"
     location: Bogor, Indonesia
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Enterprise Cloud System Integrator and Tech Professional Solutions.
   positions:
   - designation: Cloud Engineer
     start: July 2021
@@ -23,57 +23,44 @@ experiences:
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
+    - Manage, Configure, Problem solving an Openstack Cluster.
+    - Manage, Configure, Problem solving an Kubernetes Cluster.
+    - Creating a monitoring server using Prometheus, Grafana, etc.
 
 - company:
     name: PT Nusa Network Prakarsa
     url: "https://www.nusanetwork.com"
     location: West Jakarta, Indonesia
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    overview: Nusa Network Prakarsa, PT is in the business of providing their clients with a low cost solution for building and maintaining their network infrastructure.
   positions:
-  - designation: Network Engineer
+  - designation: Network Engineer Onsite at Perum Percetakan Uang Indonesia
     start: Oct 2018 
     end: Aug 2020
     responsibilities:
-    - Write lots of example codes.
-    - Read lots of examples.
-    - See lots of example videos.
+    - Manage most of the company's IT infrastructure.
+    - Configure, Upgrade, Backup all network devices.
+    - Deploy servers in Private Cloud (Nutanix).
+    - Monitor network connection stability.
+    - Preventive and corrective maintenance
+    - Documentation
   - designation: System Engineer
     start: Aug 2020
     end: June 2021
     responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
-
-- company:
-    name: Perum Percetakan Uang RI
-    url: "https://www.peruri.co.id"
-    location: South Jakarta, Indonesia
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
-  positions:
-  - designation: Network Engineer Onsite
-    start: Oct 2018 
-    end: Aug 2020
-    responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - Engage in project.
+    - Preventive and corrective maintenance.
+    - Create installation documentation.
 
 - company:
     name: PT Bangga Teknologi Indonesia (ADVAN)
     url: "https://advandigital.com"
     location: Semarang, Indonesia
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+    overview: Is the leading Android Tablet and Smartphone principal in Indonesia.
   positions:
   - designation: Research and Development
     start: Aug 2018
     end: Oct 2018
     responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - Works as a research development position in a smartphone factory that handles the fulfillment of the Domestic Component Level (TKDN) before the product is released
     
 

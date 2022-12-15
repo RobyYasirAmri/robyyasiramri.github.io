@@ -10,12 +10,12 @@ section:
   # hideTitle: true
 
 degrees:
-- name: B.Sc. in Computer Science & Engineering
+- name: Teknik Informatika
 #  icon: fa-microscope
   icon: fa-graduation-cap
   timeframe: 2022-End
   institution:
-    name: Mercubuana University
+    name: Universitas Mercubuana
     url: "https://www.mercubuana.ac.id"
   #grade: #(optional)
   #  scale: CGPA
@@ -80,11 +80,12 @@ degrees:
 #  - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
 #  - Duis sed massa feugiat, ornare justo et, aliquam est.
 #  - Pellentesque ut fringilla magna.
-- name: Vocational High School
+- name: Sekolah Menengah Kejuruan
   icon: fa-school
   timeframe: 2015-2018
   institution:
-    name: SMKN 4 Kendal
+    name: SMK Negeri 4 Kendal
+    url: https://smkn4kendal.sch.id/
 #  grade: #(optional)
 #    scale: GPA
 #    achieved: 4.5

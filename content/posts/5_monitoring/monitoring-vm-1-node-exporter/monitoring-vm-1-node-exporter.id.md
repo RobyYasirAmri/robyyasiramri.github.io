@@ -22,7 +22,7 @@ Untuk lab kali ini hal-hal yang akan kita lakukan yaitu:
 
 Pada lab ini kita masih menggunakan environtment dari lab yang sebelumnya, jadi untuk topologi yang digunakan masih sama. Install dan konfigurasi Prometheus dan Grafana dilakukan di VM rb-k8s-lb1
 
-{{< img src="/posts/kubernetes/topologi-ha-kubernetes.png" height="700" width="600" align="center" title="Topologi" >}}
+{{< img src="/posts/3_kubernetes/1_cara-konfigurasi-ha/topologi-ha-kubernetes.png" height="700" width="600" align="center" title="Topologi" >}}
 
 ## Install Node Exporter di setiap VM/Instances
 Okay, kita langsung saja ke step pertama yaitu install node exporter di semua VM/instances, kenapa? karena tujuan kita yaitu untuk memonitor resources semua VM tersebut, skuyy!
