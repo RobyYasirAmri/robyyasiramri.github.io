@@ -50,22 +50,22 @@ socialLinks:
 badges:
 - type: certification
   name: Nutanix Certified Professional 5 - Multicloud Infrastructure
-  url: "https://www.credly.com/earner/earned/badge/36812264-0440-4093-af39-71ec195cc9f3"
+  url: "https://www.credly.com/badges/36812264-0440-4093-af39-71ec195cc9f3"
   badge: "https://images.credly.com/size/340x340/images/402dc02c-d3d2-43a7-a792-0ba863115f73/NCP_MCI_Badge_2020_Color600.png"
 
 - type: certification
   name: Microsoft Certified Azure Fundamentals
-  url: "https://www.credly.com/earner/earned/badge/58bc125f-4de0-40a3-8b0e-d8d5e447cb71"
+  url: "https://www.credly.com/badges/58bc125f-4de0-40a3-8b0e-d8d5e447cb71"
   badge: "https://images.credly.com/size/340x340/images/6a254dad-77e5-4e71-8049-94e5c7a15981/azure-fundamentals-600x600.png"
 
 - type: certification
   name: Microsoft Certified Azure Administrator Associate
-  url: "https://www.credly.com/earner/earned/badge/7a5d6ba5-4d78-47dc-a427-82412d929d49"
+  url: "https://www.credly.com/badges/7a5d6ba5-4d78-47dc-a427-82412d929d49"
   badge: "https://images.credly.com/size/340x340/images/336eebfc-0ac3-4553-9a67-b402f491f185/azure-administrator-associate-600x600.png"
 
 - type: certification
   name: Juniper Networks Certified Associate, Junos (JNCIA-Junos)
-  url: "https://www.credly.com/badges/f47d13e9-8e77-4388-84db-d8d61c439ee9/public_url"
+  url: "https://www.credly.com/badges/f47d13e9-8e77-4388-84db-d8d61c439ee9"
   badge: "https://images.credly.com/size/340x340/images/115e08d1-6b0c-40b2-aa15-5906022f4db0/L_01_asso_JNCIA-Junos.png"
 
 - type: certification
